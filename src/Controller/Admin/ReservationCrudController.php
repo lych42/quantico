@@ -2,25 +2,24 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\User;
+use App\Entity\Reservation;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class UserCrudController extends AbstractCrudController
+class ReservationCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return User::class;
+        return Reservation::class;
     }
-    
+
+    /*
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id'),
-            TextField::new('email'),
-            TextField::new('password'),
+            TextField::new('title'),
+            TextEditorField::new('description'),
         ];
     }
-    
+    */
 }
