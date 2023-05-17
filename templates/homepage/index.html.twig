@@ -11,15 +11,19 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Bienvenue ! ✅</h1>
+    <h1>Bienvenue {{ user.name }} !</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your contrdddddddddddddoller at <code><a href="{{ 'C:/wamp64/www/leQuaiAntique/src/Controller/HomepageController.php'|file_link(0) }}">src/Controller/HomepageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/leQuaiAntique/templates/homepage/index.html.twig'|file_link(0) }}">templates/homepage/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <!-- Contenu de votre page d'accueil -->
+    <div class="container">
+        <!-- Image en grand format -->
+        <img src="/temp_images/fromage.jpg" class="img-fluid" alt="Image d'accueil">
+        <!-- Bouton "Réservez" -->
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary btn-lg">Réservez</a>
+        </div>
+    </div>
+
+
 
 
 {% endblock %}
