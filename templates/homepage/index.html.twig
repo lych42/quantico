@@ -4,26 +4,25 @@
 
 {% block stylesheets %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    
     body { background-color: #B6AC97;}
+    .custom-img { max-width: 100%; height: auto;}
+    .btn { background-color: #392C1E; }
+
 </style>
 {% endblock %}
 
 {% block body %}
     <h1>Bienvenue {{ user.name }} !</h1>
 
-    <!-- Contenu de votre page d'accueil -->
     <div class="container">
-        <!-- Image en grand format -->
-        <img src="/temp_images/fromage.jpg" class="img-fluid" alt="Image d'accueil">
-        <!-- Bouton "Réservez" -->
+        <div class="row">
+            <div class="col">
+                <img src="/temp_images/fromage.jpg" class="custom-img" alt="Le Fromage">
+            </div>
+        </div>
         <div class="text-center mt-4">
             <a href="#" class="btn btn-primary btn-lg">Réservez</a>
         </div>
     </div>
-
-
-
-
 {% endblock %}
