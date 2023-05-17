@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomepageController!{% endblock %}
+{% block title %}Yo!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/styles.css') }}">
+
+{% endblock %}
 
 {% block body %}
 <style>
@@ -9,11 +14,11 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Yo {{ controller_name }}! ✅</h1>
 
     This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/leQuaiAntique/src/Controller/HomepageController.php'|file_link(0) }}">src/Controller/HomepageController.php</a></code></li>
+        <li>Your contrdddddddddddddoller at <code><a href="{{ 'C:/wamp64/www/leQuaiAntique/src/Controller/HomepageController.php'|file_link(0) }}">src/Controller/HomepageController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/wamp64/www/leQuaiAntique/templates/homepage/index.html.twig'|file_link(0) }}">templates/homepage/index.html.twig</a></code></li>
     </ul>
 </div>
