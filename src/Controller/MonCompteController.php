@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MonCompteController extends AbstractController
 {
-    #[Route('/moncompte', name: 'app_mon_compte')]
+    #[Route('/moncompte', name: 'mon_compte')]
     public function index(): Response
     {
 

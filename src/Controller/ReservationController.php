@@ -6,13 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class LaCarteController extends AbstractController
+class ReservationController extends AbstractController
 {
-    #[Route('/lacarte', name: 'la_carte')]
+    #[Route('/reservation', name: 'reservation')]
     public function index(): Response
     {
-        return $this->render('la_carte/index.html.twig', [
-            'controller_name' => 'LaCarteController',
+
+        $user = $this->getUser();
+
+        return $this->render('reservation/index.html.twig', [
+            'user' => $user,
+
         ]);
     }
 }
