@@ -3,20 +3,22 @@
 namespace App\Controller;
 
 use App\Entity\Reservation;
+use App\Form\ReservationFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Persistence\ManagerRegistry;
+
 
 class ReservationController extends AbstractController
 {
     #[Route('/reservation', name: 'reservation')]
 
-    public function reservation(Request $request): Response
+    public function reservation(Request $request, ManagerRegistry $doctrine): Response
     {
-
     $reservation = new Reservation();
-    $form = $this->createForm(Reservation::class, $reservation);
+    $form = $this->createForm(ReservationFormType::class, $reservation);
 
     $form->handleRequest($request);
 
@@ -26,20 +28,20 @@ class ReservationController extends AbstractController
 
         if ($nombre_convives <= $capacity) {
             // Enregistrer la réservation dans la base de données
-            //$entityManager = $doctrine->getManager();
-            //$entityManager->persist($reservation);
-            //$entityManager->flush();
-
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($reservation);
+            $entityManager->flush();
             // Rediriger vers une page de confirmation de réservation
-            return $this->redirectToRoute('confirmation');
+            return $this->redirectToRoute('homepage');
         } else {
             // Gérer le cas où le nombre d'invités dépasse la capacité du restaurant
             $this->addFlash('error', 'Le nombre d\'invités dépasse la capacité du restaurant.');
         }
     }
 
-    return $this->render('reservation.html.twig', [
+
+    return $this->render('reservation/index.html.twig', [
         'form' => $form->createView(),
     ]);
-}
+    }
 }

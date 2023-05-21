@@ -9,17 +9,8 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ user.name }}!</h1>
     <h2>Vous pouvez réservez sur cette page</h2>
    
-    <div>
-        <h3>Date</h3>
-        <p>hhhhhhhhhhhhhhh</p>
-        <h3>Date</h3>
-        <p>hhhhhhhhhhhhhhh</p>
-        <h3>Date</h3>
-        <p>hhhhhhhhhhhhhhh</p>
-    </div>
 </div>
 {% if app.session.flashBag.has('error') %}
     <div class="alert alert-danger">
