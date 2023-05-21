@@ -14,7 +14,6 @@ class PhotoCrudController extends AbstractCrudController
     {
         return Photo::class;
     }
-
     
     public function configureFields(string $pageName): iterable
     {

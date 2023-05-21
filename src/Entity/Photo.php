@@ -23,7 +23,7 @@ class Photo
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
-    #[Vich\UploadableField(mapping:"fromage_photos", fileNameProperty:"image")]
+    #[Vich\UploadableField(mapping:"photos", fileNameProperty:"image")]
     private ?File $imageFile = null;
 
     #[ORM\Column]
@@ -58,7 +58,7 @@ class Photo
         return $this;
     }
     
-    public function setImageFile($imageFile = null)
+    public function setImageFile(?File $imageFile = null)
     {
         $this->imageFile = $imageFile;
 

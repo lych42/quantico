@@ -25,4 +25,18 @@
             <a href="#" class="btn btn-primary btn-lg">Réservez</a>
         </div>
     </div>
+
+{% if photos is not empty %}
+    {% set currentIndex = app.request.get('currentIndex', 0) %}
+    <img src="{{ asset('public/photos/' ~ photos[currentIndex].image) }}" alt="{{ photos[currentIndex].titre }}">
+
+    <div>
+        <a href="{{ path('next_photo', { 'currentIndex': currentIndex, 'maxIndex': photos|length }) }}">Photo suivante</a>
+        <a href="{{ path('previous_photo', { 'currentIndex': currentIndex, 'maxIndex': photos|length }) }}">Photo précédente</a>
+    </div>
+{% else %}
+    <p>Aucune photo disponible.</p>
+{% endif %}
+
+
 {% endblock %}
