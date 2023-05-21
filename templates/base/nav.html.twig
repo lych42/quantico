@@ -6,6 +6,10 @@
     .custom-navbar a {
         color: white;
     }
+    .custom-navbar li a:hover {
+        font-weight: bold;
+        background-color: #392C1E; 
+    }
 </style>
 {% endblock %}
 
@@ -16,9 +20,9 @@
                     <a class="navbar-brand" href="{{ path('homepage') }}">Le Quai Antique</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="" href=" {{ path('la_carte') }} ">La Carte</a></li>
-                    <li><a class="text-success" href="{{ path('mon_compte') }}">Mon Compte</a></li>
-                    <li><a class="text-info" href="{{ path('reservation') }}">Réservez !</a></li>
+                    <li><a href=" {{ path('la_carte') }} ">La Carte</a></li>
+                    <li><a href="{{ path('mon_compte') }}">Mon Compte</a></li>
+                    <li><a href="{{ path('reservation') }}">Réservez !</a></li>
                 </ul>
             </div>
 </nav>
