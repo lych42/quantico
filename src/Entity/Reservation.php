@@ -23,6 +23,9 @@ class Reservation
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $datetime = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $nomDuCLient = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Reservation
     public function setDatetime(\DateTimeInterface $datetime): self
     {
         $this->datetime = $datetime;
+
+        return $this;
+    }
+
+    public function getNomDuCLient(): ?string
+    {
+        return $this->nomDuCLient;
+    }
+
+    public function setNomDuCLient(string $nomDuCLient): self
+    {
+        $this->nomDuCLient = $nomDuCLient;
 
         return $this;
     }

@@ -20,21 +20,19 @@
         <h3>Date</h3>
         <p>hhhhhhhhhhhhhhh</p>
     </div>
-    <div class="mt-5">
-					<form name="date_booking_form" method="post" id="booking-form">
-					<div class="mb-3"><label for="date_booking_form_date" class="form-label required">Date</label><input type="date" id="date_booking_form_date" name="date_booking_form[date]" required="required" min="2023-05-20" class="mb-4 form-control">        </div>
-					<div class="mb-3"><label class="form-label required" for="date_booking_form_hour">Heure</label><select id="date_booking_form_hour" name="date_booking_form[hour]" class="mb-4 form-select"><optgroup label="Midi">
-                <option value="12:00">12h00</option><option value="12:15">12h15</option><option value="12:30">12h30</option><option value="12:45">12h45</option><option value="13:00">13h00</option><option value="13:15">13h15</option><option value="13:30">13h30</option><option value="13:45">13h45</option></optgroup><optgroup label="Soir">
-                <option value="19:00">19h00</option><option value="19:15">19h15</option><option value="19:30">19h30</option><option value="19:45">19h45</option><option value="20:00">20h00</option><option value="20:15">20h15</option><option value="20:30">20h30</option><option value="20:45">20h45</option></optgroup></select>        </div>
-					<div class="mb-3"><label for="date_booking_form_nbGuests" class="form-label required">Nombre de couverts</label><input type="number" id="date_booking_form_nbGuests" name="date_booking_form[nbGuests]" required="required" min="1" class="mb-4 form-control" value="3">        </div>
-					<div class="d-flex justify-content-center p-4">
-						<div class="mb-3"><button type="submit" id="date_booking_form_save" name="date_booking_form[save]" class="btn-outline-success btn">Rechercher</button></div>
-					</div>
-					<input type="hidden" id="date_booking_form__token" name="date_booking_form[_token]" value="22e082eee2b4ce9970.cSrQCgt6XigDxTgJxVutc91Lev_JjmJxr6IF46BMvIs.IViKaF8OKHw7pwBtgB7EGKozNKWA4xQC2O1MjsQhxsYTbapERQAQZ06DCA"></form>
-				</div>
-   
-
 </div>
+{% if app.session.flashBag.has('error') %}
+    <div class="alert alert-danger">
+        {{ app.session.flashBag.get('error')[0] }}
+    </div>
+{% endif %}
+
+<form method="post" action="{{ path('reservation') }}">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">Réserver</button>
+    {{ form_end(form) }}
+</form>
 
 
 
