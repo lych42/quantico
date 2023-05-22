@@ -15,21 +15,21 @@
 
 {% block body %}
 <nav class="navbar custom-navbar">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ path('homepage') }}">Le Quai Antique</a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href=" {{ path('la_carte') }} ">La Carte</a></li>
-                    <li>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ path('homepage') }}">Le Quai Antique</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href=" {{ path('la_carte') }} ">La Carte</a></li>
+        <li>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <a href="{{ path('mon_compte') }}">Mon compte</a>
     {% else %}
         <a href="{{ path('register') }}">Inscription</a>
     {% endif %}
-</li>
-                    <li><a href="{{ path('reservation') }}">Réservez !</a></li>
-                </ul>
-            </div>
+        </li>
+        <li><a href="{{ path('reservation') }}">Réservez !</a></li>
+        </ul>
+        </div>
 </nav>
 {% endblock %}
