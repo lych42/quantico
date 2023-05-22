@@ -1,14 +1,29 @@
-What is it?
-A README is a text file that introduces and explains a project. It contains information that is commonly required to understand what the project is about.
+Quai Antique
+Projet étudiant d'un site de restaurant "Le Quai Antique", dans le cadre de l'ECF "Évaluation En Cours de Formation - TP DIRECCTE - Eté 2023"
 
-Why should I make it?
-It's an easy way to answer questions that your audience will likely have regarding how to install and use your project and also how to collaborate with you.
+Ce projet utilise Symfony 6.2 avec symfony CLI 5.5.1, MAMP pour le serveur mySQL ainsi que PHP 8.2.3.
 
-Who should make it?
-Anyone who is working on a programming project, especially if you want others to use it or contribute.
+Installation en local
+Dans le repertoire souhaité de votre local :
 
-When should I make it?
-Definitely before you show a project to other people or make it public. You might want to get into the habit of making it the first file you create in a new project.
+git clone (URL de ce repo)
+Changez le nom du fichier "env.local.text" par ".env.local".
+Modifier le pour y mettre vos identifiants MAMP.
 
-Where should I put it?
-In the top level directory of the project. This is where someone who is new to your project will start out. Code hosting services such as GitHub, Bitbucket, and GitLab will also look for your README and display it along with the list of files and directories in your project.
+Ensuite tapez les commandes :
+
+npm install
+npm run build
+composer install
+php bin/console doctrine:database:create
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+php bin/console doctrine:fixtures:load
+Le projet est prêt à être lancé, vous pouvez démarrer le serveur symfony avec :
+
+symfony serve:start
+Un Restaurant ainsi qu'un admin ont été créé, les identifiants pour se connecter sont :
+ID: admin@admin.com
+MDP: adminadmin
+
+C'est prêt, vous pouvez maintenant parcourir le site, réserver et créer votre compte utilisateur
