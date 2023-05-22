@@ -13,20 +13,32 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Bienvenue {{ user.name }} !</h1>
+    
 
-    <div class="container">
+    <div class="container text-center">
+    <h1>Bienvenue au Quai Antique !</h1>
         <div class="row">
             <div class="col">
                 <img src="/temp_images/fromage.jpg" class="custom-img" alt="Le Fromage">
             </div>
         </div>
-        <div class="text-center mt-4">
+        <div class="row">
+            <div class="col">
+                <img src="/temp_images/fromage.jpg" class="custom-img" alt="Le Fromage">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="/temp_images/fromage.jpg" class="custom-img" alt="Le Fromage">
+            </div>
+        </div>
+
+        <div class="mt-4" style="margin-top: 20px;">
             <a href="#" class="btn btn-primary btn-lg">Réservez</a>
         </div>
     </div>
 
-{% if photos is not empty %}
+{# {% if photos is not empty %}
     {% set currentIndex = app.request.get('currentIndex', 0) %}
     <img src="{{ asset('public/photos/' ~ photos[currentIndex].image) }}" alt="{{ photos[currentIndex].titre }}">
 
@@ -36,7 +48,7 @@
     </div>
 {% else %}
     <p>Aucune photo disponible.</p>
-{% endif %}
+{% endif %} #}
 
 
 {% endblock %}
