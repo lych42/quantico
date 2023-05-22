@@ -6,7 +6,7 @@
         margin-top: 20px;
     }
 
-    .footer p {
+    .footer p, .footer h3 {
       color: white;
     }
   
@@ -14,11 +14,31 @@
 {% endblock %}
 
 {% block body %}
-<footer class="footer">
-    <div class="container">
-      <p class="text-muted">Copyright © 2023 Nom de votre site
-      </p>
+<footer class="footer text-center">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+      <h3>Contact</h3>
+      <p>Téléphone : 064146+4496</p>
+      </div>
+
+      <div class="col-md-4">
+        <!-- Horaires d'ouverture -->
+        <h3>Horaires d'ouverture</h3>
+        {% for horaire in horaires %}
+        <p>{{ horaire.getJourSemaine() }} : {{ horaire.getHeureOuverture }} - {{ horaire.getHeureFermeture }}</p>
+        {% endfor %}
+      </div>
+
+      <div class="col-md-4">
+        <!-- Adresse -->
+        <h3>Adresse</h3>
+        <p>Impasse des Lilas 73000 Chambery</p>
+      </div>
+
     </div>
+  </div>
 </footer>
 {% endblock %}
 

@@ -3,43 +3,125 @@
 {% block title %}Hello !{% endblock %}
 
 {% block body %}
-    <h1>Hello ! Ici vla la carte</h1>
 
-    <div id="la_carte">
-    <style> #la_carte {background-color: #D9D9D9;} </style> {# changer d'emplacement ? #}
-        <h1>La Carte !</h1>
-        <h2>Entrées</h2>
-            <h3>Nom du plat</h3>
-            <p>descirption lqeghnoziEQSGHNZSPGHNPS%HGJNVSP</p>
-            <p>prix</p>
-            <h3>Nom du plat</h3>
-            <p>descirption lqeghnoziEQSGHNZSPGHNPS%HGJNVSP</p>
-            <p>prix</p>
-            <h3>Nom du plat</h3>
-            <p>descirption lqeghnoziEQSGHNZSPGHNPS%HGJNVSP</p>
-            <p>prix</p>
+<div id="la_carte">
+    <style> 
+    #la_carte {
+        background-color: #D9D9D9; 
+        text-align: center;
+        } 
+    h1, h2 {
+        font-weight: bold;
+    }
+    </style>
+    <h1>La Carte</h1>
 
-        <h2>Desserts</h2>
-            <p>nfnff</p>
-            <p>fnfnf</p>
-            <p>nfnfnf</p>
-            <p>nfff</p>
-        <h2>Burgers</h2>
-            <p>lorem</p>
-            <p>ndfnfdn</p>
-            <p>ffffffff</p>
-            <p>ffffffffff</p>
+    <h2>Entrées</h2>
 
-        <h1>Menu du Marché</h1>
-        <h2>Formule Diner</h2>
-            <p>fgffffffffff</p>
-            <p>fffffffffff</p>
-            <p>fffffffffffff</p>
-        <h2>Formule Déjeuner</h2>
-            <p>fffffffffffff</p>
-            <p>fffffffffffffff</p>
-            <p>fffffffffffffff</p>
-            <p>ffffffffffffffff</p>
+        <h3>Fondue savoyarde</h3>
+        <p>Fromage fondu dans du vin blanc avec du pain</p>
+        <p>5€</p>
+
+        <h3>Raclette</h3>
+        <p>Fromage fondu servi avec des pommes de terre, des cornichons et de la charcuterie</p>
+        <p>7€</p>
+
+        <h3>Salade de chèvre chaud aux noix et au miel</h3>
+        <p>Salade verte accompagnée de chèvre chaud, de noix et de miel</p>
+        <p>6€</p>
+
+        <h3>Beignets de reblochon</h3>
+        <p>Beignets croustillants au reblochon fondant à l'intérieur</p>
+        <p>4€</p>
+
+    <h2>Plats principaux</h2>
+
+        <h3>Tartiflette</h3>
+        <p>Pommes de terre, lardons, oignons et reblochon</p>
+        <p>10€</p>
+
+        <h3>Pormoniers</h3>
+        <p>Saucisses de Savoie à base de viande de porc et de fromage</p>
+        <p>10€</p>
+
+        <h3>Gratin de courgettes au Beaufort</h3>
+        <p>Courgettes gratinées avec du fromage Beaufort</p>
+        <p>8€</p>
+
+        <h3>Diots au vin blanc</h3>
+        <p>Saucisses savoyardes cuites dans du vin blanc</p>
+        <p>9€</p>
+
+        <h3>Tourte aux légumes et au reblochon</h3>
+        <p>Tourte aux légumes et au fromage reblochon</p>
+        <p>8€</p>
+
+        <h3>Croûte au fromage</h3>
+        <p>Pain garni de fromage fondu et de champignons</p>
+        <p>7€</p>
+
+    <h2>Desserts</h2>
+
+        <h3>Tarte aux myrtilles des montagnes</h3>
+        <p>Tarte aux myrtilles fraîches de montagne</p>
+        <p>4€</p>
+
+        <h3>Beignets de pommes à la confiture de myrtilles</h3>
+        <p>Beignets de pommes accompagnés de confiture de myrtilles</p>
+        <p>3€</p>
+
+        <h3>Gâteau de Savoie</h3>
+        <p>Génoise légère au parfum délicat</p>
+        <p>4€</p>
+
+        <h3>Farçon</h3>
+        <p>Dessert à base de pommes, de pruneaux, de pain et de lard</p>
+        <p>5€</p>
+
+        <h3>Panna cotta au génépi</h3>
+        <p>Panna cotta parfumée à la liqueur de génépi des montagnes</p>
+        <p>4€</p>
+
+    <h2>Menu du Marché</h2>
+
+        <h3>Formule Diner</h3>
+            <p>(Du lundi au samedi midi)</p>
+            <p>Entrée + Plat + Dessert</p>
+            <p>18€</p>
+
+        <h3>Formule Déjeuner</h3>
+            <p>(Le midi du lundi au vendredi)</p>
+            <p>Entrée + Plat ou Plat + Dessert</p>
+            <p>18€</p>
+    
+    <h2>Menu Montagnard</h2>
+
+        <h3>Formule Fondue</h3>
+        <p>Fondue savoyarde + Assortiment de charcuterie + Salade verte</p>
+        <p>25€</p>
+
+        <h3>Formule Tartiflette</h3>
+        <p>Tartiflette + Salade verte + Verre de vin de Savoie</p>
+        <p>22€</p>
+
+        <h3>Formule Montagnarde</h3>
+        <p>Pormoniers + Gratin de courgettes au Beaufort + Tarte aux myrtilles des montagnes</p>
+        <p>20€</p>
+
+    <h2>Menu Découverte</h2>
+       
+        <h3>Formule Fromage</h3>
+        <p>Assortiment de fromages de la région + Confiture de myrtilles + Pain aux noix</p>
+        <p>15€</p>
+
+        <h3>Formule Savoyarde</h3>
+        <p>Raclette + Salade verte + Verre de vin blanc de Savoie</p>
+        <p>18€</p>
+
+        <h3>Formule Tradition</h3>
+        <p>Diots au vin blanc + Gratin dauphinois + Tarte au chocolat</p>
+        <p>20€</p>
+        
     </div>
     
 
