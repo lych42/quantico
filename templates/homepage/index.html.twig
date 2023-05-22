@@ -4,10 +4,10 @@
 
 {% block stylesheets %}
 <style>
-    
     body { background-color: #B6AC97;}
     .custom-img { max-width: 100%; height: auto; margin-top: 20px;}
-    .btn { background-color: #392C1E; }
+    .btn { background-color: #392C1E; color: white;}
+    .btn:hover { background-color: #906427; color: white;}
 
 </style>
 {% endblock %}
@@ -33,22 +33,9 @@
             </div>
         </div>
 
-        <div class="mt-4" style="margin-top: 20px;">
-            <a href="#" class="btn btn-primary btn-lg">Réservez</a>
+        <div class="mt-4" style="margin-top: 20px; margin-bottom: 20px">
+            <a href="{{ path('reservation') }}" class="btn btn-lg">Réservez</a>
         </div>
     </div>
-
-{# {% if photos is not empty %}
-    {% set currentIndex = app.request.get('currentIndex', 0) %}
-    <img src="{{ asset('public/photos/' ~ photos[currentIndex].image) }}" alt="{{ photos[currentIndex].titre }}">
-
-    <div>
-        <a href="{{ path('next_photo', { 'currentIndex': currentIndex, 'maxIndex': photos|length }) }}">Photo suivante</a>
-        <a href="{{ path('previous_photo', { 'currentIndex': currentIndex, 'maxIndex': photos|length }) }}">Photo précédente</a>
-    </div>
-{% else %}
-    <p>Aucune photo disponible.</p>
-{% endif %} #}
-
 
 {% endblock %}
