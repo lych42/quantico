@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Reservation;
 use App\Form\ReservationFormType;
+use App\Repository\HorairesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +16,7 @@ class ReservationController extends AbstractController
 {
     #[Route('/reservation', name: 'reservation')]
 
-    public function reservation(Request $request, ManagerRegistry $doctrine): Response
+    public function reservation(Request $request, ManagerRegistry $doctrine, HorairesRepository $horaires): Response
     {
     $reservation = new Reservation();
     $form = $this->createForm(ReservationFormType::class, $reservation);
@@ -42,6 +43,7 @@ class ReservationController extends AbstractController
 
     return $this->render('reservation/index.html.twig', [
         'form' => $form->createView(),
+        'horaires' => $horaires->findAll(),
     ]);
     }
 }
