@@ -25,8 +25,7 @@ class ReservationController extends AbstractController
 
     if ($form->isSubmitted() && $form->isValid()) {
         $nombre_convives = $reservation->getNombreConvives();
-        $capacity = 20; // Capacité du restaurant (à ajuster selon votre configuration)
-
+        $capacity = 20; // Capacité du restaurant
         if ($nombre_convives <= $capacity) {
             // Enregistrer la réservation dans la base de données
             $entityManager = $doctrine->getManager();

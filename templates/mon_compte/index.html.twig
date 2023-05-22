@@ -4,14 +4,27 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { 
+    margin: 1em auto; 
+    min-width: 300px;
+    width: 95%; 
+    font: 18px/1.5 sans-serif; 
+    text-align: center;
+    }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    footer {
+        margin-top: 500px;
+    }
 </style>
 
 <div class="example-wrapper">
-    <h1>Bonjour {{ user.name }}!</h1>
-    <p>Voici les infos vous concernant :</p>
-    <p>E-mail : {{ user.email }}</p>
-    <p>Pas encore client ? Venez réservez chez nous !</p>
+    <div class="user-profile">
+        <h1>Bonjour {{ user.name }}!</h1>
+    </div>
+
+    <div class="user-details">
+        <p>E-mail : {{ user.email }}</p>
+    
+    </div>
 </div>
 {% endblock %}
